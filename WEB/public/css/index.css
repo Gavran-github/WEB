@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+.session{
+    background-color: greenyellow;
+}
+.container {
+    display: flex; /* Use flexbox layout */
+    width: 100%;
+    gap: 20px;
+    padding: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    width: 200px; /* Fixed width for the options */
+}
+
+button {
+    width: 100%; /* Make buttons fill the width of the container */
+    height: 50px; /* Set a fixed height for the buttons */
+    text-align: center; /* Center the text horizontally */
+    display: flex;
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    border-radius: 25px; /* Rounded borders */
+    border: 2px solid #ccc; /* Optional: You can adjust the border style */
+    font-size: 16px; /* Optional: Adjust text size */
+}
+
+button:hover {
+    opacity: 0.7; /* Make buttons slightly transparent on hover for all */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+.welcome {
+    flex: 1; /* Allow welcome section to take up the remaining space */
+    background-color: rgb(216, 145, 184);
+    padding: 20px; /* Add some padding for aesthetics */
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin: 10px;
+}
+
+.code {
+    display: block;
+    background-color: rgb(0, 0, 0);
+    color: rgb(187, 174, 104);
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+    box-sizing: border-box;
+    width: fit-content;
+    font-size: smaller;
+}
+
+#getButton {
+    background-color: greenyellow;
+}
+
+#postButton {
+    background-color: yellow;
+}
+#putButton{
+    background-color: rgb(96, 121, 231);
+}
+#deleteButton{
+    background-color: rgb(221, 108, 108);
+}
+
+#postSubmit, #putSubmit, #deleteSubmit{
+    width: 170px;
+    height: 20px;
+}

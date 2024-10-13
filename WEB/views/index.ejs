@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/scripts/index.js" defer></script>
+    <title>WEB_DEV</title>
+</head>
+
+<body>
+    <div class="session">
+        <p>
+            Your session data:<br>
+            &emsp;&emsp; Your session will expire at: <%= expiresAt %><br>
+                <!--this symbols <%= %> are used to type some javascript code, that is why this file has extension ejs-->
+                &emsp;&emsp; <span id="clickCounter">Click counter: <%= btnCounter %></span>
+        </p>
+    </div>
+    <div class="container">
+        
+        <div class="options">
+            <div class="buttonGET">
+                <button id="getButton">Click GET method</button>
+            </div>
+
+
+
+            <div class="buttonPOST">
+                <button id="postButton">Click POST method</button>
+            </div>
+            <!-- Hidden form for adding data -->
+            <form id="myForm" style="display: none;">
+                <label for="inputData">Input Data:</label>
+                <input type="text" id="inputData" name="inputData" required>
+                <button id="postSubmit" type="submit">Submit</button>
+            </form>
+            
+
+
+            <div class="buttonPUT">
+                <button id="putButton">Click PUT method</button>
+            </div>
+
+            <form id="replaceForm" style="display: none;">
+                <label for="oldData">Old Data:</label>
+                <input type="text" id="oldData" name="oldData" required>
+            
+                <label for="newData">New Data:</label>
+                <input type="text" id="newData" name="newData" required>
+            
+                <button id="putSubmit" type="submit">Replace</button>
+            </form>
+
+
+
+
+
+            <div class="buttonDELETE">
+                <button id="deleteButton">Click DELETE method</button>
+            </div>
+            <!-- Hidden form for deleting data -->
+            <form id="deleteForm" style="display: none;">
+                <label for="deleteData">Delete Data:</label>
+                <input type="text" id="deleteData" name="deleteData" required>
+            
+                <button id="deleteSubmit" type="button">Delete</button>
+            </form>
+            
+        </div>
+
+        <div class="welcome">
+            <div id="initialOutput"><%- initialMessage %></div>
+            <!--here is different sytax because of the sentence on loading page 
+            that is rendering is using a html element <br>, you could not use it if it was a <%= %> syntax-->
+            <div id="allInputs">
+                <h3>Input Data from Session:</h3>
+                <ul>
+                    <% if (array && array.length > 0) { %>
+                        <% array.forEach(function(input) { %>
+                            <li><%= input %></li> <!-- Output each input as a list item, <li>${item}</li> this is from index.js item is that element and here is that element called input -->
+                        <% }) %>
+                    <% } else { %>
+                        <li>No input data available yet.</li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
